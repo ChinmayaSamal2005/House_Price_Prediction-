@@ -1,8 +1,7 @@
 # House_Price_Prediction-
 
-<p align="center">
-  <img src="https://i.imgur.com/wLfn6IB.png" alt="House Price Prediction Web App Banner" width="100%" />
-</p>
+<img width="1536" height="1024" alt="7FA8006C-6D52-49BB-B237-7C95422AE01D" src="https://github.com/user-attachments/assets/0013907b-a935-430f-9cda-9755674a41e8" />
+
 
 
 # 🏡 House Price Prediction Web App
