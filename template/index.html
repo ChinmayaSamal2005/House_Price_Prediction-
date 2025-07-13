@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let inputs = document.querySelectorAll("input[type='text']");
+            for (let input of inputs) {
+                if (input.value.trim() === "") {
+                    alert("All fields must be filled!");
+                    return false;
+                }
+                if (isNaN(input.value)) {
+                    alert("Please enter numbers only in all fields!");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>House Price Prediction</h1>
+
+    <form action="/predict" method="POST" onsubmit="return validateForm()">
+        <label>Sqft Living:</label>
+        <input type="text" name="sqft_living">
+
+        <label>Bedrooms:</label>
+        <input type="text" name="bedrooms">
+
+        <label>Bathrooms:</label>
+        <input type="text" name="bathrooms">
+
+        <label>Floors:</label>
+        <input type="text" name="floors">
+
+        <label>Waterfront (1 = Yes, 0 = No):</label>
+        <input type="text" name="waterfront">
+
+        <label>Condition (1-5):</label>
+        <input type="text" name="condition">
+
+        <input type="submit" value="Predict">
+    </form>
+
+</body>
+</html>
